@@ -23,9 +23,11 @@ Generally, ST has a software called STM32CubeMX to help programmers to build a b
 # Build a project 'test' in the 'peripheral' directory
 ./build.sh peripheral/test
 
-# Build a project `test` with FreeRTOS source in the current directory
+# Build a project 'test' with FreeRTOS source in the current directory
 ./build.sh --rtos test
 
+# Build a project 'test' with FreeRTOS source in the 'freertos' directory
+./build.sh --rtos freertos/test
 ```
 
 ## Development platform and hardware
