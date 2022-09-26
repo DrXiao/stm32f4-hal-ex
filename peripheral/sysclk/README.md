@@ -6,6 +6,7 @@ screen /dev/ttyUSB0
 ```
 
 ## Demo
-* Reset STM32 after using screen
+* Remember to connect USART1 before using screen.
+* Reset STM32 after using screen, then the two values of System Core Clock before/after setting will be printed.
 
 ![](sysclk.gif)

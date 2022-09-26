@@ -6,6 +6,7 @@ screen /dev/ttyUSB0
 ```
 
 ## Demo
+* Remember to connect USART1 before using screen.
 ### With Semaphore
 * the 10 tasks will print their string in order.
 
@@ -13,5 +14,6 @@ screen /dev/ttyUSB0
 
 ### Without Semaphore
 * the behavior may work unnormally as following.
+* The demo has been uncommented ```xSemaohoreTake``` and ```xSemaphoreGive``` in ```task``` function.
 
 ![](semaphore-err.gif)
