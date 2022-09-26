@@ -40,7 +40,7 @@ Generally, ST has a software called STM32CubeMX to help programmers to build a b
 
 Here provides a simple tutorial to setup the environment.
 
-### 0.Prerequisite
+### 0. Prerequisite
 ```
 sudo apt install build-essential git zlib1g-dev libsdl1.2-dev automake* autoconf* libtool libpixman-1-dev lib32gcc1 lib32ncurses5 libc6:i386 libncurses5:i386 libstdc++6:i386 libusb-1.0.0-dev
 ```
@@ -116,6 +116,12 @@ Here provides a learning order for STM32 beginners.
 	* ```queue/```: Let two tasks communicate with each other by queue.
 3. Semaphore
 	* ```semaphore/```: Let every task get the lock of a shared source and do their work.
+
+### Needed Tool
+[ST-LINK/V2 in-circuit debugger/programmer for STM8 and STM32](https://www.mouser.tw/ProductDetail/Adafruit/2548?qs=SElPoaY2y5K%252BwHNUAvyTvg%3D%3D)
+* STM32 Board SWDIO <---> ST-LINK/V2 SWDIO
+* STM32 Board SWCLK <---> ST-LINK/V2 SWCLK
+* STM32 Board GND <---> ST-LINK/V2 GNU
 
 ## Reference
 * [stm32f4-examples](https://github.com/shengwen-tw/stm32f4-examples) : A series of STM32F4 examples written in Standard Peripheral Library (SPL)

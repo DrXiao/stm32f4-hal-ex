@@ -7,4 +7,4 @@ make flash
 ## Demo
 * Let PC10 and PC11 be connected to two LEDs.
 
-![](gpio-new.gif)
+![](gpio.gif)
