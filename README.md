@@ -93,29 +93,29 @@ Here provides a learning order for STM32 beginners.
 
 ### Peripheral manipulation
 1. GPIO 
-	1.1 ```gpio/```: Use two GPIO pin as output, and let two LEDs blink
+	* ```gpio/```: Use two GPIO pin as output, and let two LEDs blink
 2. UART
-	2.1 ```uart/```: Use USB-to-TTL module (ch340 or cp2102) to do data transmission.
-	2.2 ```uart-it/```: Like 2.1, but it uses interrupt to transmit data instead of polling.
-	2.3 ```uart-dma/```: Like 2.1, but it transmits data once by DMA.
+	1. ```uart/```: Use USB-to-TTL module (ch340 or cp2102) to do data transmission.
+	2. ```uart-it/```: Like 2.1, but it uses interrupt to transmit data instead of polling.
+	3. ```uart-dma/```: Like 2.1, but it transmits data once by DMA.
 3. System Clock
-	3.1 ```sysclk/```: Set system core clock to 168 MHz by HSE oscillator.
+	* ```sysclk/```: Set system core clock to 168 MHz by HSE oscillator.
 4. Systick
-	4.1 ```systick/```: Set system tick timer(systick) to let a LED blink.
+	* ```systick/```: Set system tick timer(systick) to let a LED blink.
 5. timer
-	5.1 ```timer/```: Set a timer to let a LED blink
+	* ```timer/```: Set a timer to let a LED blink
 6. PWM
-	6.1 ```pwm/```: Let two LEDs be adjusted thier brightness.
+	* ```pwm/```: Let two LEDs be adjusted thier brightness.
 7. ADC
-	7.1 ```adc-it/```: Use analog to digital converter (ADC) to detect the strength of a input signal.
+	* ```adc-it/```: Use analog to digital converter (ADC) to detect the strength of a input signal.
 
 ### FreeRTOS
 1. Create some tasks
-	1.1 ```create_task/```: Use FreeRTOS scheduler to schedule two tasks.
+	* ```create_task/```: Use FreeRTOS scheduler to schedule two tasks.
 2. Inter-Process Communication (IPC)
-	2.1 ```queue/```: Let two tasks communicate with each other by queue.
+	* ```queue/```: Let two tasks communicate with each other by queue.
 3. Semaphore
-	3.1 ```semaphore/```: Let every task get the lock of a shared source and do their work.
+	* ```semaphore/```: Let every task get the lock of a shared source and do their work.
 
 ## Reference
 * [stm32f4-examples](https://github.com/shengwen-tw/stm32f4-examples) : A series of STM32F4 examples written in Standard Peripheral Library (SPL)
