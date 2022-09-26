@@ -7,10 +7,25 @@ Generally, ST has a software called STM32CubeMX to help programmers to build a b
 
 ```shell
 # Build a project only with HAL
-./build.sh <new project name>
+./build.sh <path/><new project name>
 
 # Build a project with HAL and FreeRTOS
-./build.sh --rtos <new project name>
+./build.sh --rtos <path/><new project name>
+
+# If there has any error, the shell script will print error message.
+```
+
+* building example
+```
+# Build a project 'test' in the current directory
+./build.sh test
+
+# Build a project 'test' in the 'peripheral' directory
+./build.sh peripheral/test
+
+# Build a project `test` with FreeRTOS source in the current directory
+./build.sh --rtos test
+
 ```
 
 ## Development platform and hardware
