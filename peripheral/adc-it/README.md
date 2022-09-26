@@ -10,3 +10,5 @@ screen /dev/ttyUSB0
 * Let PA3 be connected to 3V3 after using screen, then it will prints values closed to 4096 approxmiately.
 
 ![](adc-it.gif)
+
+* Notice that if the signal is external, GND should be also connected to the signal's GND.
