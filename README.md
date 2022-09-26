@@ -17,7 +17,7 @@ Generally, ST has a software called STM32CubeMX to help programmers to build a b
 * GNU/Linux and GCC toolchain
 * The code have been tested on STM32F4xx
 
-<img src="stm32f4xx.jpg" />
+<img src="stm32f4xx.jpg" height="504" width="378"/>
 
 ## Development environment setup
 
@@ -101,7 +101,7 @@ Here provides a learning order for STM32 beginners.
 	3.1 ```semaphore/```: Let every task get the lock of a shared source and do their work.
 
 ## Reference
-* ![stm32f4-examples](https://github.com/shengwen-tw/stm32f4-examples) : A series of STM32F4 examples written in Standard Peripheral Library (SPL)
+* [stm32f4-examples](https://github.com/shengwen-tw/stm32f4-examples) : A series of STM32F4 examples written in Standard Peripheral Library (SPL)
 	* This repo is inspired by it, and uses HAL to build the basic programs.
-* ![NCKU Wikipedia](http://wiki.csie.ncku.edu.tw/embedded/Lab25)
-* ![STM32F4 SPEC](spec/) : The necessary specifications of STM32F4 series.
+* [NCKU Wikipedia](http://wiki.csie.ncku.edu.tw/embedded/Lab25)
+* [STM32F4 SPEC](spec/) : The necessary specifications of STM32F4 series.
