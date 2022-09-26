@@ -38,7 +38,7 @@ Generally, ST has a software called STM32CubeMX to help programmers to build a b
 
 ## Development environment setup
 
-Here provides some a simple tutorial to setup the environment.
+Here provides a simple tutorial to setup the environment.
 
 ### 0.Prerequisite
 ```
