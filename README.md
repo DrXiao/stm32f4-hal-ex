@@ -93,7 +93,7 @@ Here provides a learning order for STM32 beginners.
 
 ### Peripheral manipulation
 1. GPIO 
-	* ```gpio/```: Use two GPIO pin as output, and let two LEDs blink
+	* ```gpio/```: Use two GPIO pins as output, and let two LEDs blink
 2. UART
 	1. ```uart/```: Use USB-to-TTL module (ch340 or cp2102) to do data transmission.
 	2. ```uart-it/```: Like 2.1, but it uses interrupt to transmit data instead of polling.
