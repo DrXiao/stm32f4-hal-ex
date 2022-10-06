@@ -38,7 +38,7 @@ int main(void) {
 		sprintf(task_name[i], "task%u", i + 1);
 		sprintf(task_msg[i], "TASK %2u\r\n", i + 1);
 		
-		xTaskCreate(task, task_name[i], configMINIMAL_STACK_SIZE, task_msg[i], tskIDLE_PRIORITY + task_num - i, NULL);
+		xTaskCreate(task, task_name[i], configMINIMAL_STACK_SIZE, task_msg[i], tskIDLE_PRIORITY + 1, NULL);
 	}
 	
 	vTaskStartScheduler();
