@@ -11,6 +11,6 @@ screen /dev/ttyUSB0
 * Be aware of the following modification in source code ...
 	* In ```FreeRTOSConfig.h```, ```configUSE_TIMERS``` and relative macro are defined.
 		* When defing ```configUSE_TIMERS``` as 1, the relative functions in FreeRTOS will be compiled.
-	* In ```freertos.c```, the static variables and function related to software timer are also defined.
+	* In ```freertos.c```, the static variables and functions related to software timer are also defined.
 
 ![](soft-timer.gif)
