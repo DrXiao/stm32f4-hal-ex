@@ -1,9 +1,9 @@
 #include "stm32f4xx_hal.h"
 #include "stm32f4xx_hal_conf.h"
-#define PERIOD 1600
-#define PRESCALER 100
+#define PERIOD 1000
+#define PRESCALER 16
 
-TIM_HandleTypeDef hal_tim2;
+TIM_HandleTypeDef hal_tim3;
 
 void HAL_TIM_MspPostInit(TIM_HandleTypeDef *);
 
@@ -14,12 +14,12 @@ void TIM2_Init(void) {
 		.CounterMode = TIM_COUNTERMODE_UP,
 	};
 
-	hal_tim2 = (TIM_HandleTypeDef){
-		.Instance = TIM2,
+	hal_tim3 = (TIM_HandleTypeDef){
+		.Instance = TIM3,
 		.Init = TIM_Base_InitStruct
 	};
 
-	HAL_TIM_Base_Init(&hal_tim2);
+	HAL_TIM_Base_Init(&hal_tim3);
 
 	TIM_OC_InitTypeDef TIM_OC_InitStruct = {
 		.OCMode = TIM_OCMODE_PWM1,
@@ -28,12 +28,12 @@ void TIM2_Init(void) {
 		.OCFastMode = TIM_OCFAST_DISABLE
 	};
 
-	HAL_TIM_PWM_ConfigChannel(&hal_tim2, &TIM_OC_InitStruct, TIM_CHANNEL_2);
-	HAL_TIM_PWM_ConfigChannel(&hal_tim2, &TIM_OC_InitStruct, TIM_CHANNEL_3);
+	HAL_TIM_PWM_ConfigChannel(&hal_tim3, &TIM_OC_InitStruct, TIM_CHANNEL_1);
+	HAL_TIM_PWM_ConfigChannel(&hal_tim3, &TIM_OC_InitStruct, TIM_CHANNEL_2);
 
-	HAL_TIM_PWM_Start(&hal_tim2, TIM_CHANNEL_2);
-	HAL_TIM_PWM_Start(&hal_tim2, TIM_CHANNEL_3);
-	HAL_TIM_MspPostInit(&hal_tim2);
+	HAL_TIM_PWM_Start(&hal_tim3, TIM_CHANNEL_1);
+	HAL_TIM_PWM_Start(&hal_tim3, TIM_CHANNEL_2);
+	HAL_TIM_MspPostInit(&hal_tim3);
 }
 
 int main(void) {
@@ -45,18 +45,18 @@ int main(void) {
 	int status = 0;
 	while(1) {
 		if(!status) 
-			pwm += 160;
+			pwm += PERIOD / 10;
 		else
-			pwm -= 160;
+			pwm -= PERIOD / 10;
 
 		if (pwm == PERIOD)
 			status = !status;
 		else if(pwm == 0)
 			status = !status;
 
-		TIM2->CCR2 = pwm;
-		TIM2->CCR3 = PERIOD - pwm;
-		HAL_Delay(100);
+		TIM3->CCR1 = pwm;
+		TIM3->CCR2 = PERIOD - pwm;
+		HAL_Delay(1000);
 	}
 
         return 0;

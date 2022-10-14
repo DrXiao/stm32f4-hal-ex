@@ -30,6 +30,9 @@ int main(void) {
 	HAL_Init();
 
 	UART1_Init();
+	
+	bin_semphr = xSemaphoreCreateBinary();
+	xSemaphoreGive(bin_semphr);
 
 	const int task_num = 10, buf_size = 16;
 	char task_name[task_num][buf_size];
@@ -47,9 +50,6 @@ int main(void) {
 }
 
 void UART1_Init(void) {
-	bin_semphr = xSemaphoreCreateBinary();
-	xSemaphoreGive(bin_semphr);
-
 	UART_InitTypeDef UART_InitStruct = {
 		.BaudRate = 9600,
 		.WordLength = UART_WORDLENGTH_8B,

@@ -114,14 +114,20 @@ Here provides a learning order for STM32 beginners.
 	* ```create_task/```: Use FreeRTOS scheduler to schedule two tasks.
 2. Inter-Process Communication (IPC)
 	* ```queue/```: Let two tasks communicate with each other by queue.
+	* ```stream/```: Let two tasks communicate with each other by stream buffer.
+	* ```message/```: Let two tasks communicate with each other by message buffer.
+	* Notice that queue can be used in multiple producer/consumer scenarios, and the other is suggested to be used in one producer/consumer scenarios.
 3. Semaphore
 	* ```semaphore/```: Let every task get the lock of a shared source and do their work.
+	* ```mutex/```: Let every task get the mutex lock of a shared source and do their work.
+4. Software timer
+	* ```soft-timer```: Use software timer in FreeRTOS to print a string per second.
 
 ### Needed Tool
 [ST-LINK/V2 in-circuit debugger/programmer for STM8 and STM32](https://www.mouser.tw/ProductDetail/Adafruit/2548?qs=SElPoaY2y5K%252BwHNUAvyTvg%3D%3D)
 * STM32 Board SWDIO <---> ST-LINK/V2 SWDIO
 * STM32 Board SWCLK <---> ST-LINK/V2 SWCLK
-* STM32 Board GND <---> ST-LINK/V2 GNU
+* STM32 Board GND <---> ST-LINK/V2 GND
 
 ## Reference
 * [stm32f4-examples](https://github.com/shengwen-tw/stm32f4-examples) : A series of STM32F4 examples written in Standard Peripheral Library (SPL)
