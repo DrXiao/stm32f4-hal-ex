@@ -116,7 +116,7 @@ Here provides a learning order for STM32 beginners.
 	* ```queue/```: Let two tasks communicate with each other by queue.
 	* ```stream/```: Let two tasks communicate with each other by stream buffer.
 	* ```message/```: Let two tasks communicate with each other by message buffer.
-	* Notice that queue can be used in multiple producer/consumer scenarios, and the other is suggested to be used in one producer/consumer scenarios.
+	* Notice that queue can be used in multiple producer/consumer scenarios, and the other are suggested to be used in one producer/consumer scenarios.
 3. Semaphore
 	* ```semaphore/```: Let every task get the lock of a shared source and do their work.
 	* ```mutex/```: Let every task get the mutex lock of a shared source and do their work.
