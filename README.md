@@ -102,12 +102,16 @@ Here provides a learning order for STM32 beginners.
 	* ```sysclk/```: Set system core clock to 168 MHz by HSE oscillator.
 4. Systick
 	* ```systick/```: Set system tick timer(systick) to let a LED blink.
-5. timer
+5. Timer
 	* ```timer/```: Set a timer to let a LED blink
 6. PWM
 	* ```pwm/```: Let two LEDs be adjusted thier brightness.
 7. ADC
 	* ```adc-it/```: Use analog to digital converter (ADC) to detect the strength of a input signal.
+8. I2C
+	* ```i2c/```: Use I2C to let STM32 send data to Arduino UNO, and then let Arduino print the data by serial.
+9. SPI
+	* ```spi/```: Like I2C, but it uses SPI to reach the original goal.
 
 ### FreeRTOS
 1. Create some tasks

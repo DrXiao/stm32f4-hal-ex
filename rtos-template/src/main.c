@@ -4,8 +4,15 @@
 #include "task.h"
 
 int main(void) {
-
+	
+	__disable_irq();
+	
 	HAL_Init();
+
+
+	__enable_irq();
+
+	vTaskStartScheduler();
 
         return 0;
 }
