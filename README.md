@@ -93,7 +93,7 @@ Here provides a learning order for STM32 beginners.
 
 ### Peripheral manipulation
 1. GPIO 
-	* ```gpio/```: Use two GPIO pins as output, and let two LEDs blink
+	* ```gpio/```: Use two GPIO pins as output, and let two LEDs blink.
 2. UART
 	1. ```uart/```: Use USB-to-TTL module (ch340 or cp2102) to do data transmission.
 	2. ```uart-it/```: Like 2.1, but it uses interrupt to transmit data instead of polling.
@@ -103,7 +103,7 @@ Here provides a learning order for STM32 beginners.
 4. Systick
 	* ```systick/```: Set system tick timer(systick) to let a LED blink.
 5. Timer
-	* ```timer/```: Set a timer to let a LED blink
+	* ```timer/```: Set a timer to let a LED blink.
 6. PWM
 	* ```pwm/```: Let two LEDs be adjusted thier brightness.
 7. ADC
@@ -112,6 +112,8 @@ Here provides a learning order for STM32 beginners.
 	* ```i2c/```: Use I2C to let STM32 send data to Arduino UNO, and then let Arduino print the data by serial.
 9. SPI
 	* ```spi/```: Like I2C, but it uses SPI to reach the original goal.
+10. CRC
+	* ```crc/```: Calculate CRC value by CRC calculation unit in STM32 board.
 
 ### FreeRTOS
 1. Create some tasks
