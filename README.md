@@ -127,6 +127,34 @@ Here provides a learning order for STM32 beginners.
 4. Software timer
 	* ```soft-timer```: Use software timer in FreeRTOS to print a string per second.
 
+### Other helpful tools/commands in each example
+#### opinc.sh
+* Open STM32 HAL header file ```lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_<periph>.h``` by vim
+* Ex:
+```
+# Open lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
+./opinc.sh tim
+
+# Open lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc_ex.h
+./opinc.sh adc_ex
+```
+#### opsrc.sh
+* Open STM32 HAL source file ```lib/STM32F4xx_HAL_Driver/Src/stm32f4xx__hal_<periph>.c``` by vim
+* Ex:
+```
+# Open lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.c
+./opsrc.sh uart
+
+# Open lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_hash_ex.c
+./opsrc.sh hash_ex
+```
+#### Debug STM32 Board by GDB and OpenOCD
+* Use ```arm-none-eabi-gdb``` and ```openocd``` to debug STM32 board.
+```
+make debug
+```
+* Press ```<ctrl> + <a>``` + ```|``` to leave the debug environment.
+
 ### Needed Tool
 [ST-LINK/V2 in-circuit debugger/programmer for STM8 and STM32](https://www.mouser.tw/ProductDetail/Adafruit/2548?qs=SElPoaY2y5K%252BwHNUAvyTvg%3D%3D)
 * STM32 Board SWDIO <---> ST-LINK/V2 SWDIO
