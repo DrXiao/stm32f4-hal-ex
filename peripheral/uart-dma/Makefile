@@ -2,6 +2,7 @@
 #Project Configuration
 SRC_DIR=./src
 INC_DIR=./include
+STM32Fx=STM32F4xx
 STM=stm32f407xx
 PERIPH=tim tim_ex rcc rcc_ex flash flash_ex flash_ramfunc \
 	gpio dma dma_ex pwr pwr_ex cortex exti uart
@@ -39,8 +40,8 @@ CFLAGS+=-Wl,-T,stm32_flash.ld
 CFLAGS+=-I./$(INC_DIR)
 
 #Stm32 libraries
-ST_LIB=./lib/STM32F4xx_HAL_Driver
-CFLAGS+=-I./lib/CMSIS/Device/ST/STM32F4xx/Include
+ST_LIB=./lib/$(STM32Fx)_HAL_Driver
+CFLAGS+=-I./lib/CMSIS/Device/ST/$(STM32Fx)/Include
 
 #CMSIS libraries
 CFLAGS+=-I./lib/CMSIS/Include
@@ -51,22 +52,20 @@ CFLAGS+=-I$(ST_LIB)/Inc/Legacy
 
 #======================================================================#
 #Source code
-HAL_PERIPH=$(foreach periph, $(PERIPH), ./lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_$(periph).c)
+HAL_PERIPH=$(foreach periph, $(PERIPH), ./lib/$(STM32Fx)_HAL_Driver/Src/stm32f4xx_hal_$(periph).c)
 
 #HAL
-SRC=./lib/CMSIS/Device/ST/STM32F4xx/Source/Templates/system_stm32f4xx.c \
-	./lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c
+SRC=./lib/CMSIS/Device/ST/$(STM32Fx)/Source/Templates/system_stm32f4xx.c \
+	./lib/$(STM32Fx)_HAL_Driver/Src/stm32f4xx_hal.c \
 
 SRC+=$(HAL_PERIPH)
 
 #Major programs
-SRC+=./$(SRC_DIR)/main.c \
-	./$(SRC_DIR)/stm32f4xx_it.c \
-	./$(SRC_DIR)/stm32f4xx_hal_msp.c
+SRC+=$(wildcard $(SRC_DIR)/*.c)
 
 #======================================================================#
 #STM32 startup file
-STARTUP=./lib/CMSIS/Device/ST/STM32F4xx/Source/Templates/gcc/startup_$(STM).s
+STARTUP=./lib/CMSIS/Device/ST/$(STM32Fx)/Source/Templates/gcc/startup_$(STM).s
 
 #======================================================================#
 #Make rules
